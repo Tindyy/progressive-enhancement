@@ -8,10 +8,56 @@
 		<link href="assets/styles.css" rel="stylesheet">
 		<style>
 			/* Schrijf hier gewoon je CSS voor dit component */
-
 			/* Hint: Dit component kun je volledig met HTML en CSS bouwen */
-
 			/* Hint: Denk aan de states van het component; deze kan open en dicht zijn */
+			details{
+				margin: 2em 1em;
+				padding: 10px;
+				width: fit-content;
+				border: 1px solid black;
+				border-radius: .5rem;
+				max-width: 30em;
+			}
+
+			details:nth-of-type(1){
+				background-color: var(--green);
+			}
+
+			details:nth-of-type(2){
+				background-color: var(--purple);
+			}
+
+			details:nth-of-type(3){
+				background-color: var(--yellow);
+			}
+
+			summary{
+				list-style-type: '+';
+				cursor: pointer;
+			}
+
+			@supports selector(details[open]){
+				details:nth-of-type(n+1){
+					background-color: white;
+				}
+
+				details[open] summary{
+					list-style-type: 'x';
+				}
+
+				details[open]:nth-of-type(1){
+					background-color: var(--green);
+				}
+
+				details[open]:nth-of-type(2){
+					background-color: var(--purple);
+				}
+
+				details[open]:nth-of-type(3){
+					background-color: var(--yellow);
+				}
+			}
+
 		</style>
 	</head>
 	<body>
@@ -19,8 +65,6 @@
 
 
 		<!-- Content (waar nog wat HTML omheen moet 😄):
-		Wat is frontend development?
-		Een frontend developer ontwerpt en bouwt websites in HTML, CSS en JavaScript. Deze frontend talen leer je bij ons, je hebt dus geen voorkennis nodig.
 
 		Moet ik al kunnen coderen?
 		Nee, je hebt helemaal geen voorkennis nodig om te beginnen aan deze opleiding, we kunnen je alles leren! Als je wel al voorkennis hebt, is dat alleen maar goed, dan kunnen we je helpen je skills te verbeteren en te verdiepen in de stof.
@@ -29,6 +73,20 @@
 		Een Associate degree-opleiding is een tweejarige hbo-opleiding op niveau 5. Een Ad slaat een brug tussen het mbo-4 (niveau 4) en een hbo-bachelor (niveau 6). Met een Associate degree kies je voor een praktijkgerichte hbo-opleiding; je wordt opgeleid voor een beroep dat aansluit bij de praktijk. In dit geval word je opgeleid tot ‘frontend designer/developer' of kortweg ‘frontender’. Frontenders ontwerpen en maken interactieve, toegankelijke toepassingen voor het web. Frontenders werken binnen het gebied van software development, interactieontwerp en digitaal visueel ontwerp.
 		Na afronding van deze tweejarige hbo-opleiding, krijg je een wettelijk erkend hbo-diploma met de graad Associate degree. Met dit Ad-diploma kun je direct aan de slag in het werkveld of doorstromen naar de bacheloropleiding Communication and Multimedia Design (CMD).
 		-->
+		<details>
+			<summary>Wat is frontend development?</summary>
+			<p>Een frontend developer ontwerpt en bouwt websites in HTML, CSS en JavaScript. Deze frontend talen leer je bij ons, je hebt dus geen voorkennis nodig.</p>
+		</details>
+		<details>
+			<summary>Moet ik al kunnen coderen?</summary>
+			<p>Nee, je hebt helemaal geen voorkennis nodig om te beginnen aan deze opleiding, we kunnen je alles leren! Als je wel al voorkennis hebt, is dat alleen maar goed, dan kunnen we je helpen je skills te verbeteren en te verdiepen in de stof.</p>
+		</details>
+		<details>
+			<summary>Wat is een Associate Degree?</summary>
+			<p>	Een Associate degree-opleiding is een tweejarige hbo-opleiding op niveau 5. Een Ad slaat een brug tussen het mbo-4 (niveau 4) en een hbo-bachelor (niveau 6). Met een Associate degree kies je voor een praktijkgerichte hbo-opleiding; je wordt opgeleid voor een beroep dat aansluit bij de praktijk. In dit geval word je opgeleid tot ‘frontend designer/developer' of kortweg ‘frontender’. Frontenders ontwerpen en maken interactieve, toegankelijke toepassingen voor het web. Frontenders werken binnen het gebied van software development, interactieontwerp en digitaal visueel ontwerp.
+				Na afronding van deze tweejarige hbo-opleiding, krijg je een wettelijk erkend hbo-diploma met de graad Associate degree. Met dit Ad-diploma kun je direct aan de slag in het werkveld of doorstromen naar de bacheloropleiding Communication and Multimedia Design (CMD).</p>
+		</details>
+
 
 
 		<!-- Hint: Dit stukje HTML geeft het misschien al weg :) -->
