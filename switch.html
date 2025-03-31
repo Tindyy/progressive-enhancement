@@ -13,54 +13,52 @@
 
 			/* Hint: Hoe ver ga je qua styling? Vraag jezelf dit altijd af */
 			/* The switch - the box around the slider */
-			
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
+/* Hide default checkbox */
+input[type="checkbox"] {
   position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 34px;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
 }
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  border-radius: 50%;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+/* Style the switch */
+label {
+    width: 60px;
+    height: 30px;
+    display: inline-block;
+    position: relative;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: var(--yellow);
 }
 
-input:checked + .slider {
-  background-color: var(--green);
+label::after {
+    content: "";
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background: var(--purple);
+    border-radius: 50%;
+    transition: 0.3s;
 }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px var(--green);
+/* Checked state */
+input:checked + label {
+    background: var(--blue);
 }
 
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+input:checked + label::after {
+    left: 32px;
+}
+
+input:focus + label {
+    outline: 2px solid #000;  
+}
+
+input:focus + label::after {
+    outline: 2px solid ;  
 }
 
 </style>
@@ -77,10 +75,16 @@ input:checked + .slider:before {
 				<a href="assets/switch.mp4">assets/switch.mp4</a>
 			</video>
 		</details>
+    
+    <input type="checkbox" id="switch" role="switch" aria-checked="false">
+    <label for="switch"></label>
+    
+    
 
-  <label class="switch">
-	<input type="checkbox">
-	<span class="slider"></span>
-  </label>
+
 	</body>
+
+  <script>
+
+  </script>
 </html>
